@@ -6,4 +6,4 @@ Udacity Machine Learning Advanced Nanodegree Program has 3 Projects:
 
 2. **Deep Learning**: *Image Classification* - for the CIFAR-10 dataset which consists of airplanes, dogs, cats, and other objects. The techniques used are normalization of the images, one-hot encoding of the labels, building a convolutional layer, max pool layer, and fully connected layer. 
 
-3. **Machine Learning Capstone Project** : *Brain Tumor Classification* - classification of three types of brain tumors (i.e., meningioma, glioma, and pituitary tumor) in T1-weighted contrast-enhanced MRI (CE-MRI) images.
+3. **Machine Learning Capstone Project** : *Brain Tumor Classification* - classification of three types of brain tumors (i.e., meningioma, glioma, and pituitary tumor) in T1-weighted contrast-enhanced MRI (CE-MRI) images. Click [here](https://github.com/PadmarajBhat/Machine-Learning/blob/master/BrainTumorClassification/Capstone_Report_BrainTumorClassification.pdf) for the quick view on report.
