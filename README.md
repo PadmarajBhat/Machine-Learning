@@ -11,3 +11,5 @@ Udacity Machine Learning Advanced Nanodegree Program has 3 Projects:
     * Na....Show me just the Outcome: [Here](http://htmlpreview.github.com/?https://github.com/PadmarajBhat/Machine-Learning/blob/master/Image%20Classification/image_classification.html)
 
 3. **Machine Learning Capstone Project** : *Brain Tumor Classification* - classification of three types of brain tumors (i.e., meningioma, glioma, and pituitary tumor) in T1-weighted contrast-enhanced MRI (CE-MRI) images. Click [here](https://github.com/PadmarajBhat/Machine-Learning/blob/master/BrainTumorClassification/Capstone_Report_BrainTumorClassification.pdf) for the quick view on report.
+    * Dive into Code: [Here](https://github.com/PadmarajBhat/Machine-Learning/tree/master/BrainTumorClassification)
+    * Na....Show me just the Outcome: [Here](https://github.com/PadmarajBhat/Machine-Learning/blob/master/BrainTumorClassification/Capstone_Report_BrainTumorClassification.pdf)
