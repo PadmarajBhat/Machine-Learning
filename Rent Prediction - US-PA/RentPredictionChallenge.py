@@ -122,9 +122,9 @@ def preProcessTheData(df):
     print("Shape of the data set after transforming : ", df.shape,"\n")
     return df
 
-def scaleMinMax(df):
+def scaleMinMax(df,min,max):
     print("\nShape of the data set before min max scaling : ",df.shape)
-    minMax = preprocessing.MinMaxScaler(feature_range=(1, 2))
+    minMax = preprocessing.MinMaxScaler(feature_range=(min, max))
     np_scaled = minMax.fit_transform(df)
     df_scaled = pd.DataFrame(np_scaled,columns=df.columns)
     print("\nShape of the data set post min max scaling : ",df_scaled.shape)
@@ -141,7 +141,7 @@ def boxCoxTranformation(df):
     print("Performing column transformations for :", list(temp_df) )
     
     #converting to positive for boxcox
-    df_min_max = scaleMinMax(temp_df)
+    df_min_max = scaleMinMax(temp_df,1,2)
     #print(df_min_max)
     df_new = pd.DataFrame()
     for c in list(df_min_max):
@@ -154,6 +154,29 @@ def boxCoxTranformation(df):
     print("Shape of the dataset after transformation : ", df_new.shape)
     return df_new
 
+def newBoxCoxTranformation(df,target):
+    
+    #assuming that only numerical features are presented
+    
+    print("Shape of the dataset before transformation : ", df.shape)
+    
+    print("Ignoring the columns....",list(df.select_dtypes(exclude=[np.number])))
+    temp_df = df[list(df.select_dtypes(include=[np.number]))]
+    print("Performing column transformations for :", list(temp_df) )
+    
+    #converting to positive for boxcox
+    scale_column = list(temp_df)
+	scale_column.remove(target)
+    df_min_max = scaleMinMax(temp_df[scale_column],1,2)
+    #print(df_min_max)
+    df_new = pd.DataFrame()
+    for c in list(df_min_max):
+        df_new[c] = stats.boxcox(df_min_max[c])[0]
+	df_new['rent'] = df.rent.apply(lambda x: return math.log(x))
+    
+    print("Shape of the dataset after transformation : ", df_new.shape)
+    return df_new[scale_column], df_new['rent']
+	
 def returnTrainTestSet(df,frac=.7,random_state=200):
     
     print("Input data set shape : ",df.shape)
@@ -165,7 +188,7 @@ def returnTrainTestSet(df,frac=.7,random_state=200):
     print("\nfeature_columns : ", feature_columns)
     print("lable_column : ", lable_column)
     
-    plot_column = feature_columns[random.randint(0,df.shape[1]-1)]
+    plot_column = feature_columns[random.randint(0,df.shape[1]-5)]
     df[plot_column].plot( kind='hist',title=plot_column)
     plt.show()
     df = scaleMinMax(df)
@@ -174,12 +197,14 @@ def returnTrainTestSet(df,frac=.7,random_state=200):
     df[plot_column].plot( kind='hist',title=plot_column)
     plt.show()
     
-    df_train = df.sample(frac=frac,random_state=random_state)
-    df_test = df.drop(df_train.index)
+    df_train = df.sample(frac=frac,random_state=random_state).reset_index()
+    df_test = df.drop(df_train.index).reset_index()
     print("\nTrain feature shape: ", df_train[feature_columns].shape, df_train[lable_column].shape)
     print("Test feature shape: ", df_test[feature_columns].shape, df_test[lable_column].shape)
     
     return df_train[feature_columns], df_train[lable_column], df_test[feature_columns], df_test[lable_column]
+	
+	
 
 def printStats(test_result,test_y, printCounter = 0):
     
