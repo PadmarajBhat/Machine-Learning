@@ -166,13 +166,13 @@ def newBoxCoxTranformation(df,target):
     
     #converting to positive for boxcox
     scale_column = list(temp_df)
-	scale_column.remove(target)
+    scale_column.remove(target)
     df_min_max = scaleMinMax(temp_df[scale_column],1,2)
     #print(df_min_max)
     df_new = pd.DataFrame()
     for c in list(df_min_max):
         df_new[c] = stats.boxcox(df_min_max[c])[0]
-	df_new['rent'] = df.rent.apply(lambda x: return math.log(x))
+    df_new['rent'] = df.rent.apply(lambda x: math.log(x))
     
     print("Shape of the dataset after transformation : ", df_new.shape)
     return df_new[scale_column], df_new['rent']
