@@ -8,6 +8,7 @@ import random
 
 #Pre Processing using sklearn
 from sklearn import preprocessing
+from sklearn.preprocessing import power_transform
 
 #Validation using sklearn
 from sklearn.model_selection import ShuffleSplit, cross_val_score
@@ -157,26 +158,17 @@ def boxCoxTranformation(df):
 def newBoxCoxTranformation(df,target):
     
     #assuming that only numerical features are presented
-    
     print("Shape of the dataset before transformation : ", df.shape)
-    
-    print("Ignoring the columns....",list(df.select_dtypes(exclude=[np.number])))
-    temp_df = df[list(df.select_dtypes(include=[np.number]))]
-    print("Performing column transformations for :", list(temp_df) )
-    
-    #converting to positive for boxcox
-    scale_column = list(temp_df)
-    scale_column.remove(target)
-    df_min_max = scaleMinMax(temp_df[scale_column],1,2)
-    #print(df_min_max)
-    df_new = pd.DataFrame()
-    for c in list(df_min_max):
-        df_new[c] = stats.boxcox(df_min_max[c])[0]
-    df_new['rent'] = df.rent.apply(lambda x: math.log(x))
-    
-    print("Shape of the dataset after transformation : ", df_new.shape)
-    return df_new[scale_column], df_new['rent']
 	
+    y = np.array(df[target].apply( lambda x: math.log(x)))
+    X= df.drop(target,axis = 1)
+    X = preprocessing.MinMaxScaler(feature_range=(1, 2)).fit_transform(X)
+    X = preprocessing.power_transform( X, method='box-cox')
+	
+    print("Shape of the dataset after transformation : ", X.shape, y.shape)
+	
+    return X,y
+
 def returnTrainTestSet(df,frac=.7,random_state=200):
     
     print("Input data set shape : ",df.shape)
