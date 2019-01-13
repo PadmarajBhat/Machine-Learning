@@ -160,11 +160,12 @@ def newBoxCoxTranformation(df,target):
     #assuming that only numerical features are presented
     print("Shape of the dataset before transformation : ", df.shape)
 	
-    y = np.array(df[target].apply( lambda x: math.log(x)))
+    y = df[target].apply( lambda x: math.log(x))
     X= df.drop(target,axis = 1)
+    x_columns = list(X)
     X = preprocessing.MinMaxScaler(feature_range=(1, 2)).fit_transform(X)
     X = preprocessing.power_transform( X, method='box-cox')
-	
+    X = pd.DataFrame(X,columns=x_columns)
     print("Shape of the dataset after transformation : ", X.shape, y.shape)
 	
     return X,y
