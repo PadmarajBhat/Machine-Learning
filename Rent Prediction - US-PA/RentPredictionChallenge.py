@@ -165,7 +165,7 @@ def newBoxCoxTranformation(df,target):
     x_columns = list(X)
     X = preprocessing.MinMaxScaler(feature_range=(1, 2)).fit_transform(X)
     X = preprocessing.power_transform( X, method='box-cox')
-    X = pd.DataFrame(X,columns=x_columns)
+    #X = pd.DataFrame(X,columns=x_columns)
     print("Shape of the dataset after transformation : ", X.shape, y.shape)
 	
     return X,y
