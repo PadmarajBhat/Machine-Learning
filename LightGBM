@@ -4,4 +4,8 @@
       * it creates bin of the continuous variable and uses it to find the best split.
          * this not only reduces the speed but also addresses the sparsity in the data.
 * How is it different from xgboost? or is it better to xgboost ?
+    * xgboost with tree method="hist" can be comparable to that of lightGBM.
+    * xgboost seems to have low prediction time but high training time when compared to that of lightGBM.
+    
+    * There is also a catboost but that has slow training time but excellent prediction time. : https://www.analyticsvidhya.com/blog/2017/08/catboost-automated-categorical-data/
     * can xgboost be distributed ?
