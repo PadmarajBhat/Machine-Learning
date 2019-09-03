@@ -16,6 +16,7 @@
         * single machine with multiple cpu ?
         * single machine with multiple cpu and gpu
         * multiple machines with multiple cpu and gpu
+            * Need to dig deep into https://lightgbm.readthedocs.io/en/latest/Parallel-Learning-Guide.html
         
     * when it comes to catboost performance, how far is LGBM when data has categorical features ?
     
