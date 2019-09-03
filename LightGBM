@@ -7,5 +7,19 @@
     * xgboost with tree method="hist" can be comparable to that of lightGBM.
     * xgboost seems to have low prediction time but high training time when compared to that of lightGBM.
     
-    * There is also a catboost but that has slow training time but excellent prediction time. : https://www.analyticsvidhya.com/blog/2017/08/catboost-automated-categorical-data/
+    * There is also a catboost (categorical boosting) but that has slow training time but excellent prediction time. : https://www.analyticsvidhya.com/blog/2017/08/catboost-automated-categorical-data/
+    * nice article on parameter tuning of LGBM
+    
+* Open ended question:
     * can xgboost be distributed ?
+    * how does LGBM scale out?
+        * single machine with multiple cpu ?
+        * single machine with multiple cpu and gpu
+        * multiple machines with multiple cpu and gpu
+        
+    * when it comes to catboost performance, how far is LGBM when data has categorical features ?
+    
+    * should the categorical features to be one hot encoded before being fed to LGBM ?
+        * **Ans**:
+        * in the traditional approach to create machine learning model, encoding is common practice. However, LGBM does not wants expects the same. However, the categorical columns has to be explicitly specified. : https://lightgbm.readthedocs.io/en/latest/Python-Intro.html
+                * ```train_data = lgb.Dataset(data, label=label, feature_name=['c1', 'c2', 'c3'], categorical_feature=['c3'])```
