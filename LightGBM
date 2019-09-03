@@ -1,3 +1,7 @@
 * What is LightGBM?
+   * it is from Microsoft (2017).
+   * claims bettern than xgboost
+      * it creates bin of the continuous variable and uses it to find the best split.
+         * this not only reduces the speed but also addresses the sparsity in the data.
 * How is it different from xgboost? or is it better to xgboost ?
     * can xgboost be distributed ?
