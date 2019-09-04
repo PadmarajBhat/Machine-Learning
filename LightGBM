@@ -2,18 +2,27 @@
    * it is from Microsoft (2017).
    * claims bettern than xgboost
       * it creates bin of the continuous variable and uses it to find the best split.
-         * this not only reduces the speed but also addresses the sparsity in the data.
+         * this not only increases the speed but also addresses the sparsity in the data.
 * How is it different from xgboost? or is it better to xgboost ?
-    * xgboost with tree method="hist" can be comparable to that of lightGBM.
+    * xgboost with parameter tree method="hist" can be comparable to that of lightGBM.
     * xgboost seems to have low prediction time but high training time when compared to that of lightGBM.
     
-    * There is also a catboost (categorical boosting) but that has slow training time but excellent prediction time. : https://www.analyticsvidhya.com/blog/2017/08/catboost-automated-categorical-data/
-    * nice article on parameter tuning of LGBM
+    * There is also a catboost (categorical boosting) but that has slow training time but outperforms in prediction time.
+        *  https://www.analyticsvidhya.com/blog/2017/08/catboost-automated-categorical-data/
+        
+    * nice article on parameter tuning of LGBM : https://medium.com/@pushkarmandot/https-medium-com-pushkarmandot-what-is-lightgbm-how-to-implement-it-how-to-fine-tune-the-parameters-60347819b7fc
+    
     * Scikit API details : https://lightgbm.readthedocs.io/en/latest/pythonapi/lightgbm.LGBMClassifier.html#lightgbm.LGBMClassifier.fit
         * supports evaluation set
         * class weight to address the case of imbalance in training data
         * categorical_feature: to indicate the categorical columns through the indices to the feature list. If NOT then the panda category information is inferred.
-        
+
+    * should the categorical features to be one hot encoded before being fed to LGBM ?
+        * **Ans**:
+        * in the traditional approach to create machine learning model, encoding is common practice. However, LGBM does not wants expects the same. However, the categorical columns has to be explicitly specified. : https://lightgbm.readthedocs.io/en/latest/Python-Intro.html
+                * ```train_data = lgb.Dataset(data, label=label, feature_name=['c1', 'c2', 'c3'], categorical_feature=['c3'])```  
+
+
 * Open ended question:
     * can xgboost be distributed ?
     * 
@@ -29,7 +38,8 @@
             
     * when it comes to catboost performance, how far is LGBM when data has categorical features ?
     
-    * should the categorical features to be one hot encoded before being fed to LGBM ?
-        * **Ans**:
-        * in the traditional approach to create machine learning model, encoding is common practice. However, LGBM does not wants expects the same. However, the categorical columns has to be explicitly specified. : https://lightgbm.readthedocs.io/en/latest/Python-Intro.html
-                * ```train_data = lgb.Dataset(data, label=label, feature_name=['c1', 'c2', 'c3'], categorical_feature=['c3'])```
+    * when do we use lightgbm client?
+    
+    * LightGBM supports libsvm, tsv, csv, txt, numpy (2d), panda, H2O DF and scipy sparse matrix
+        * what is libsvm format? (I m guessing condensed for integer dataset)
+        * what are differences between panda df and H2O df ?
