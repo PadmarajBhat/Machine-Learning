@@ -22,7 +22,16 @@
         * in the traditional approach to create machine learning model, encoding is common practice. However, LGBM does not wants expects the same. However, the categorical columns has to be explicitly specified. : https://lightgbm.readthedocs.io/en/latest/Python-Intro.html
                 * ```train_data = lgb.Dataset(data, label=label, feature_name=['c1', 'c2', 'c3'], categorical_feature=['c3'])```  
 
-
+    
+    * LightGBM supports libsvm, tsv, csv, txt, numpy (2d), panda, H2O DF and scipy sparse matrix
+        * what is libsvm format? (I m guessing condensed for integer dataset)
+            * **Ans**: Yes I was right in my guess. https://qr.ae/TWyxE1: It is format with which sparse entry can be done for a sample/observation. Missing Indexes are assumed to be 0.
+                ```-1 5:1 7:1 14:1 19:1 39:1 40:1 51:1 63:1 67:1 73:1 74:1 76:1 78:1 83:1 ```
+                    * Note that it starts with label and in the above case it is -1.
+                    
+        * what are differences between panda df and H2O df ?
+          * **Ans** : they are almost the same except the fact that H2O df are subjected to lazy evaluation (like that of dask)
+          
 * Open ended question:
     * can xgboost be distributed ?
     * 
@@ -39,7 +48,5 @@
     * when it comes to catboost performance, how far is LGBM when data has categorical features ?
     
     * when do we use lightgbm client?
-    
-    * LightGBM supports libsvm, tsv, csv, txt, numpy (2d), panda, H2O DF and scipy sparse matrix
-        * what is libsvm format? (I m guessing condensed for integer dataset)
-        * what are differences between panda df and H2O df ?
+
+    * what is most voted, hottest and latest queries on lightgbm ?
