@@ -9,7 +9,11 @@
     
     * There is also a catboost (categorical boosting) but that has slow training time but excellent prediction time. : https://www.analyticsvidhya.com/blog/2017/08/catboost-automated-categorical-data/
     * nice article on parameter tuning of LGBM
-    
+    * Scikit API details : https://lightgbm.readthedocs.io/en/latest/pythonapi/lightgbm.LGBMClassifier.html#lightgbm.LGBMClassifier.fit
+        * supports evaluation set
+        * class weight to address the case of imbalance in training data
+        * categorical_feature: to indicate the categorical columns through the indices to the feature list. If NOT then the panda category information is inferred.
+        
 * Open ended question:
     * can xgboost be distributed ?
     * 
