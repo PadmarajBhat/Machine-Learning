@@ -12,12 +12,17 @@
     
 * Open ended question:
     * can xgboost be distributed ?
+    * 
     * how does LGBM scale out?
         * single machine with multiple cpu ?
         * single machine with multiple cpu and gpu
         * multiple machines with multiple cpu and gpu
+            * **Ans**:
             * Need to dig deep into https://lightgbm.readthedocs.io/en/latest/Parallel-Learning-Guide.html
-        
+            * Bit into theory:
+                * data parallelism: data is split horizontally, so as to create bins. best split for the tree growth is taken from the recursive best fit and hence reducing the "reduce" efforts. Best suited for the large data model builiding.
+                * feature parallelism: features are distributed among workers who communicate best splits with others. Suitable when features are considerable large. Hope there is a ratio which we determines the kind of parallelism to choose.
+            
     * when it comes to catboost performance, how far is LGBM when data has categorical features ?
     
     * should the categorical features to be one hot encoded before being fed to LGBM ?
