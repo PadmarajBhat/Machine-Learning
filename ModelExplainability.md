@@ -1,0 +1,7 @@
+##### What is Shap and its alternative approaches?
+    * Quick intro : https://www.kaggle.com/dansbecker/shap-values
+
+* Nice article on SHAP: https://towardsdatascience.com/how-to-avoid-the-machine-learning-blackbox-with-shap-da567fc64a8b
+      * fitting a simpler model like linear regression on the **model** prediction to make following explanation
+            * Prediction explainer: median prediction and attributes moving the prediction value up or down in case of regression model.
+            * Model Explainer: Order of similarity based plot of all the feature to see impact of feature values to prediction.
