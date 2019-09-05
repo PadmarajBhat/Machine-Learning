@@ -5,3 +5,5 @@
       * fitting a simpler model like linear regression on the **model** prediction to make following explanation
             * Prediction explainer: median prediction and attributes moving the prediction value up or down in case of regression model.
             * Model Explainer: Order of similarity based plot of all the feature to see impact of feature values to prediction.
+            * Dependecy Plot:  SHAP values indicating the importance of features to the dependent feature.
+            * Summary Plot: SHAP values indicating the extreme values impact on prediction for each features.
