@@ -13,3 +13,9 @@
             * shap.forceplot : for predicion and model explainer
             * shap.dependence_plot 
             * shap.summary_plot
+            
+      * shap.DeepExplainer : for deep learning model explanability
+            * shap.image_plot : for image plot and its imp features.
+            
+      * there are 2 more explainer, gradient and kernel explainer
+            * are these for both trees and deep learning models?
