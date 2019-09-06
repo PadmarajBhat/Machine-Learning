@@ -3,3 +3,5 @@
     * R2 increases if the variables are added
     * adjusted R2 would decrease or remain same if the newly added variable do not impact dependent variable.
     * highly advised to use adjusted R2 when multivariable linear regression is opted.
+    
+* Accelerating sklearn training through sk-dist : https://medium.com/building-ibotta/train-sklearn-100x-faster-bec530fc1f45
