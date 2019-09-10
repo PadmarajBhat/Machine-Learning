@@ -23,3 +23,12 @@
    * this new residual error is what third model tries to fit and predict
    * this continues until residual error goes to zero or number trees are exhausted
    * overfitting can be reduced by keeping track of validation score.
+
+* eXtreme Gradient Boosting:
+   * Before gettting into details of how it works, there are some nice usecases of XGBoost
+         * using xgboost for image classification
+         * xgboost as the replacement to dense + softmax in the neural network
+         
+   * xgboost supports 
+         * distributed computing (for the cluster of machines) 
+         * parallel computing ( cpu / gpc cores) 
