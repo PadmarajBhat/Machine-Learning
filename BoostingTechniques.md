@@ -32,3 +32,9 @@
    * xgboost supports 
          * distributed computing (for the cluster of machines) 
          * parallel computing ( cpu / gpc cores) 
+         * out of core computing:  when data is outside the machine capacity.
+         * cache optimized
+         * continue training: https://stackoverflow.com/a/47000386/8693106
+            ```bst = xgb.train(param0, dtrain2, num_round, evals=[(dtrain, "training")], xgb_model='xgbmodel')```
+      
+   
