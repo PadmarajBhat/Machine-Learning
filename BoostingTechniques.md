@@ -40,5 +40,10 @@
          * cache optimized
          * continue training: https://stackoverflow.com/a/47000386/8693106
             ```bst = xgb.train(param0, dtrain2, num_round, evals=[(dtrain, "training")], xgb_model='xgbmodel')```
+            
+         * Learning:
+                    * optimimum number of split is decided based on the gain. 
+                    * if gain decreases to negative value then stop it or
+                    * split till the max depth though there is negative gain in anticipation of positive gain in the deeper level.
       
    
