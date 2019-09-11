@@ -1,6 +1,10 @@
 ##### Notes on different boosting techniques
 
 * All boosting technique, in the core, focus on the enhancing on the weaker model in the subsequent models.
+      * https://towardsdatascience.com/catboost-vs-light-gbm-vs-xgboost-5f93620723db: Nice read on the differences between 3 boosting algos
+         * comparison here is mainly on behavior to categorical features.
+               * sample data for example is also rich in category values
+               * in the end catboost is rated at the top for its speed and accuracy, followed by xgboost and lastly the lightgbm
 
 * AdaBoost: Adaptive Boost (oldest among others)
     * The data points are initially given equal weight
