@@ -45,5 +45,8 @@
                     * optimimum number of split is decided based on the gain. 
                     * if gain decreases to negative value then stop it or
                     * split till the max depth though there is negative gain in anticipation of positive gain in the deeper level.
+                    * a greedy approach is taken to best split by adding gains from the branch.
+         * How does it handle missing value?
+         * Ho to do interactive feature analysis?
       
    
