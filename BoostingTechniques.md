@@ -47,6 +47,9 @@
                     * split till the max depth though there is negative gain in anticipation of positive gain in the deeper level.
                     * a greedy approach is taken to best split by adding gains from the branch.
          * How does it handle missing value?
+                    * structure score:
+                         * search for missing value's direction in the tree traversal.
+                              * there are couple approach like bagging which can be specified to identify the right approach to impute the missing data automatically.
          * Ho to do interactive feature analysis?
       
    
