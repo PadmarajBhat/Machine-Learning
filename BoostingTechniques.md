@@ -1,8 +1,8 @@
 ##### Notes on different boosting techniques
 
 * All boosting technique, in the core, focus on the enhancing on the weaker model in the subsequent models.
-      * https://towardsdatascience.com/catboost-vs-light-gbm-vs-xgboost-5f93620723db: Nice read on the differences between 3 boosting algos
-         * comparison here is mainly on behavior to categorical features.
+     *  https://towardsdatascience.com/catboost-vs-light-gbm-vs-xgboost-5f93620723db: Nice read on the differences between 3 boosting algos
+          * comparison here is mainly on behavior to categorical features.
                * sample data for example is also rich in category values
                * in the end catboost is rated at the top for its speed and accuracy, followed by xgboost and lastly the lightgbm
 
@@ -56,6 +56,7 @@
                     * can it read the spark dataframe directly?
                     * can it scale it to n number of nodes in spark ?
                     * any special consideration like pipe creation in case of keras or model transformation?
+                         * yes, the input is expected to be vector assembler where all the features are combined under one name "features" and target variable will be labeled as "StringIndexer" output if it is categorical variable.
                     
          * Ho to do interactive feature analysis?
       
