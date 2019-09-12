@@ -39,7 +39,9 @@
          * out of core computing:  when data is outside the machine capacity.
          * cache optimized
          * continue training: https://stackoverflow.com/a/47000386/8693106
-            ```bst = xgb.train(param0, dtrain2, num_round, evals=[(dtrain, "training")], xgb_model='xgbmodel')```
+            ```
+            bst = xgb.train(param0, dtrain2, num_round, evals=[(dtrain, "training")], xgb_model='xgbmodel')
+            ```
             
          * Learning:
                     * optimimum number of split is decided based on the gain. 
@@ -50,6 +52,11 @@
                     * structure score:
                          * search for missing value's direction in the tree traversal.
                               * there are couple approach like bagging which can be specified to identify the right approach to impute the missing data automatically.
+         * spark integration: https://xgboost.readthedocs.io/en/latest/jvm/xgboost4j_spark_tutorial.html
+                    * can it read the spark dataframe directly?
+                    * can it scale it to n number of nodes in spark ?
+                    * any special consideration like pipe creation in case of keras or model transformation?
+                    
          * Ho to do interactive feature analysis?
       
    
