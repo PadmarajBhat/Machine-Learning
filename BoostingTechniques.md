@@ -57,7 +57,9 @@
                     * can it scale it to n number of nodes in spark ?
                     * any special consideration like pipe creation in case of keras or model transformation?
                          * yes, the input is expected to be vector assembler where all the features are combined under one name "features" and target variable will be labeled as "StringIndexer" output if it is categorical variable.
-                    * by setting input parameter to xgboost "missing" (key) we can set the default value to missing data (for "NaN" cases)
+                    * by setting input parameter to xgboost "missing" (key) we can set the identifier for the missing data (for "NaN" cases). Later xgboost during training itself determines automatically appropriate values for the missing values. Or rather we should say that xgboost will identify the right direction for handling missing values.
+                    *  setHandleInvalid = "keep" has to be set in the stringindexer to retain the vector. value "skip" is present then the vector is ignored.
+                        * Note that StringIndexer is not only for the labels but also for any categorical value in the features.
          * Ho to do interactive feature analysis?
       
    
