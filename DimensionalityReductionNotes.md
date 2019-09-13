@@ -5,6 +5,16 @@
     * Incremental PCA
     * Sparse PCA
     * SVD
+      * can be used for : https://medium.com/analytics-vidhya/master-dimensionality-reduction-with-these-5-must-know-applications-of-singular-value-777299940b89
+         * image compression:
+            * the decomposing high matrix to a low rank matrix retain maximum information through svd
+         * image recovery
+            * masked images can be decomposed an dthe lower ranked matrices can be used to replace the original masked image.
+         * svd for eigen faces
+            * extracting most import features of the faces
+         * spectral clustering
+         * removing background from videos
+         
     * Gaussian Random Projection
     * Sparse Random Projection
     * Multidimension Scaling
