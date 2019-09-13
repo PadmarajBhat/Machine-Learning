@@ -5,3 +5,5 @@
     * highly advised to use adjusted R2 when multivariable linear regression is opted.
     
 * Accelerating sklearn training through sk-dist : https://medium.com/building-ibotta/train-sklearn-100x-faster-bec530fc1f45
+
+* interesting article on loss function: https://medium.com/analytics-vidhya/a-detailed-guide-to-7-loss-functions-for-machine-learning-algorithms-26e11b6e700b
