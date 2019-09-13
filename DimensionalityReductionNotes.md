@@ -14,7 +14,21 @@
             * extracting most import features of the faces
          * spectral clustering
          * removing background from videos
-         
+      * ways to use svd in python
+         * ```
+            from numpy.linalg import svd ; svd(nd array)
+            ```
+         * ```
+              from sklearn.decomposition import TruncatedSVD
+              svd =  TruncatedSVD(n_components = 2)
+              A_transf = svd.fit_transform(A)
+           ```
+           
+         * ```
+            from sklearn.utils.extmath import randomized_svd
+            A = np.array([[-1, 2, 0], [2, 0, -2], [0, -2, 1]])
+            u, s, vt = randomized_svd(A, n_components = 2)
+            ```
     * Gaussian Random Projection
     * Sparse Random Projection
     * Multidimension Scaling
