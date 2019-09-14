@@ -16,4 +16,7 @@
          * huber loss - half of squre of difference if the value is less than delta 
                         if not less then mod of the difference
       * classification loss functions:
+         * Binary cross entropy loss, multiclass cross entropy loss
+         * Hinge loss
+         * KL - Divergence
    * Cost Function: is the average loss for all the training data
