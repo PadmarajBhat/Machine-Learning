@@ -8,4 +8,12 @@
 
 * interesting article on loss function: https://medium.com/analytics-vidhya/a-detailed-guide-to-7-loss-functions-for-machine-learning-algorithms-26e11b6e700b
    * loss function or error function: defines the error (difference of prediction and ground truth)
+      * regression loss functions:
+         * why do we need below functions? why cant we take the ypred-y as the loss function?
+            * it is not fool proof. there may be chances that average calculation may result in 0 (due to possiblities of negative and positive preditions)
+         * l2 loss - square of the difference between ypred and y
+         * l1 loss - mod of the difference between ypred and y
+         * huber loss - half of squre of difference if the value is less than delta 
+                        if not less then mod of the difference
+      * classification loss functions:
    * Cost Function: is the average loss for all the training data
