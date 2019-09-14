@@ -7,3 +7,5 @@
 * Accelerating sklearn training through sk-dist : https://medium.com/building-ibotta/train-sklearn-100x-faster-bec530fc1f45
 
 * interesting article on loss function: https://medium.com/analytics-vidhya/a-detailed-guide-to-7-loss-functions-for-machine-learning-algorithms-26e11b6e700b
+   * loss function or error function: defines the error (difference of prediction and ground truth)
+   * Cost Function: is the average loss for all the training data
