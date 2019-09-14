@@ -61,5 +61,6 @@
                     *  setHandleInvalid = "keep" has to be set in the stringindexer to retain the vector. value "skip" is present then the vector is ignored.
                         * Note that StringIndexer is not only for the labels but also for any categorical value in the features.
          * Ho to do interactive feature analysis?
-      
+         * supports the interactive feature importance through plot.
+            * in case of classification it is very important to **know the features impacting each class**
    
