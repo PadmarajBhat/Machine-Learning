@@ -20,3 +20,5 @@
          * Hinge loss
          * KL - Divergence
    * Cost Function: is the average loss for all the training data
+
+* https://www.datasciencecentral.com/profiles/blogs/google-releases-massive-visual-databases-for-machine-learning
