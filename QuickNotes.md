@@ -25,3 +25,4 @@
 * https://ml.dask.org/joblib.html
 * https://twitter.com/dask_dev/status/1175049472520310788?s=19
 * Time series forecast: https://www.datasciencecentral.com/video/dsc-webinar-series-how-to-use-time-series-data-to-forecast-at
+* ML guide: https://www.datasciencecentral.com/profiles/blogs/supervised-learning-everything-you-need-to-know
